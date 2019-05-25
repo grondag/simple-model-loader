@@ -120,9 +120,9 @@ def mcVersion = "1.14.2 Pre-Release 2"
 
 dependencies {
 	minecraft "com.mojang:minecraft:$mcVersion"
-	mappings "net.fabricmc:yarn:$mcVersion+build.4"
-	modCompile "net.fabricmc:fabric-loader:0.4.7+build.147"
-	modCompile "net.fabricmc.fabric-api:fabric-api:0.3.0-pre+build.164"
+	mappings "net.fabricmc:yarn:$mcVersion+build.6"
+	modCompile "net.fabricmc:fabric-loader:0.4.7+build.153"
+	modCompile "net.fabricmc.fabric-api:fabric-api:0.3.0-pre+build.166"
 	
     modCompile "cloth-config:ClothConfig:0.2.1.14"
     include "cloth-config:ClothConfig:0.2.1.14"

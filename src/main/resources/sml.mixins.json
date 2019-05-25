@@ -5,6 +5,8 @@
   "mixins": [
   ],
   "client": [
+  	"MixinBakedQuadFactory",
+  	"MixinModelItemPropertyOverrideList"
   ],
   "injectors": {
     "defaultRequire": 1
