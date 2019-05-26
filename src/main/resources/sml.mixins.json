@@ -6,7 +6,9 @@
   ],
   "client": [
   	"MixinBakedQuadFactory",
-  	"MixinJsonUnbakedModel"
+  	"MixinJsonUnbakedModel",
+  	"MixinWeightedBakedModel",
+  	"MixinWeightedBakedModelEntry"
   ],
   "injectors": {
     "defaultRequire": 1
