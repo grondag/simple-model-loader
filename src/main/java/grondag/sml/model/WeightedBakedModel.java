@@ -15,6 +15,7 @@ import net.minecraft.client.texture.Sprite;
 import net.minecraft.util.WeightedPicker;
 import net.minecraft.util.math.Direction;
 
+//TODO: patch WeightedBakedModel
 @Environment(EnvType.CLIENT)
 public class WeightedBakedModel implements BakedModel {
     private final int totalWeight;

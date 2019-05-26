@@ -33,6 +33,11 @@ minecraft {
 }
 
 repositories {
+	mavenLocal()
+    //flatDir {
+    //    dirs '../fabric/build/libs'
+    //}
+    
     maven { url "https://tehnut.info/maven"}
     maven { url "http://maven.sargunv.s3-website-us-west-2.amazonaws.com/" }
     maven { url "https://minecraft.curseforge.com/api/maven" }
@@ -122,7 +127,8 @@ dependencies {
 	minecraft "com.mojang:minecraft:$mcVersion"
 	mappings "net.fabricmc:yarn:$mcVersion+build.6"
 	modCompile "net.fabricmc:fabric-loader:0.4.7+build.153"
-	modCompile "net.fabricmc.fabric-api:fabric-api:0.3.0-pre+build.166"
+	//modCompile "net.fabricmc.fabric-api:fabric-api:0.3.0-pre+build.166"
+	modCompile "net.fabricmc.fabric-api:fabric-api:0.3.0-pre+local"
 	
     modCompile "cloth-config:ClothConfig:0.2.1.14"
     include "cloth-config:ClothConfig:0.2.1.14"

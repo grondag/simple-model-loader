@@ -7,11 +7,6 @@ import java.util.function.Supplier;
 
 import com.google.common.collect.ImmutableList;
 
-import grondag.sml.json.encoding.JsonUnbakedModel;
-import grondag.sml.json.encoding.ModelElement;
-import grondag.sml.json.encoding.ModelElementFace;
-import grondag.sml.json.encoding.ModelElementTexture;
-import grondag.sml.mixin.MixinBakedQuadFactory;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.renderer.v1.Renderer;
@@ -28,17 +23,16 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.render.model.BakedModel;
 import net.minecraft.client.render.model.BakedQuad;
 import net.minecraft.client.render.model.BakedQuadFactory;
-import net.minecraft.client.render.model.CubeFace;
 import net.minecraft.client.render.model.ModelBakeSettings;
-import net.minecraft.client.render.model.ModelRotation;
+import net.minecraft.client.render.model.json.JsonUnbakedModel;
+import net.minecraft.client.render.model.json.ModelElement;
+import net.minecraft.client.render.model.json.ModelElementFace;
 import net.minecraft.client.render.model.json.ModelItemPropertyOverrideList;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.texture.Sprite;
-import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.ExtendedBlockView;
 
 @Environment(EnvType.CLIENT)
@@ -217,31 +211,7 @@ public class BasicBakedModel implements BakedModel, FabricBakedModel {
             emitter.material(mat);
             emitter.cullFace(cullFace);
             QUADFACTORY_EXT.bake(emitter, element, elementFace, sprite, face, bakeProps);
-//            ModelElementTexture tex = elementFace.textureData;
-//            if (bakeProps.isUvLocked()) {
-//               tex = this.uvLock(elementFace.textureData, face, bakeProps.getRotation());
-//            }
-//
-//            float[] uvs = new float[tex.uvs.length];
-//            System.arraycopy(tex.uvs, 0, uvs, 0, uvs.length);
-//            float uMin = (float)sprite.getWidth() / (sprite.getMaxU() - sprite.getMinU());
-//            float vMin = (float)sprite.getHeight() / (sprite.getMaxV() - sprite.getMinV());
-//            float cent = 4.0F / Math.max(vMin, uMin);
-//            float uCent = (tex.uvs[0] + tex.uvs[0] + tex.uvs[2] + tex.uvs[2]) / 4.0F;
-//            float vCent = (tex.uvs[1] + tex.uvs[1] + tex.uvs[3] + tex.uvs[3]) / 4.0F;
-//            tex.uvs[0] = MathHelper.lerp(cent, tex.uvs[0], uCent);
-//            tex.uvs[2] = MathHelper.lerp(cent, tex.uvs[2], uCent);
-//            tex.uvs[1] = MathHelper.lerp(cent, tex.uvs[1], vCent);
-//            tex.uvs[3] = MathHelper.lerp(cent, tex.uvs[3], vCent);
-//            float[] pos = QUADFACTORY_EXT.sml_computePos(element.from, element.to);
-//            method_3458(emitter, tex, sprite, face, pos, bakeProps.getRotation(), element.rotation, element.shade);
-//            Direction direction_2 = method_3467(ints_1);
-//            System.arraycopy(uvs, 0, tex.uvs, 0, uvs.length);
-//            if (element.rotation == null) {
-//               this.method_3462(ints_1, direction_2);
-//            }
-            // TODO Auto-generated method stub
-            //QUAD_FACTORY.bake(modelElement_1.from, modelElement_1.to, modelElementFace_1, sprite_1, direction_1, modelBakeSettings_1, modelElement_1.rotation, modelElement_1.shade);
+            emitter.emit();
         }
     }
 }
