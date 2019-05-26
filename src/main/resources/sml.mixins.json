@@ -7,6 +7,7 @@
   "client": [
   	"MixinBakedQuadFactory",
   	"MixinJsonUnbakedModel",
+  	"MixinMultipartBakedModel",
   	"MixinWeightedBakedModel",
   	"MixinWeightedBakedModelEntry"
   ],

@@ -11,6 +11,4 @@ public class BakedQuadFactoryHelper {
     public final int data[] = new int[28];
     public final float uv[] = new float[UV_LEN];
     public final float pos[] = new float[6];
-    
-    
 }
